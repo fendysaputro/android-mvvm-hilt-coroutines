@@ -2,6 +2,7 @@ plugins {
     id 'com.android.application'
     id 'org.jetbrains.kotlin.android'
     id 'kotlin-kapt'
+    id 'dagger.hilt.android.plugin'
 }
 
 android {
@@ -81,10 +82,10 @@ dependencies {
 
     //Hilt for di
     implementation "com.google.dagger:hilt-android:$daggerHiltVersion"
-    kapt "com.google.dagger:hilt-android-compiler:$daggerHiltVersion"
+    annotationProcessor "com.google.dagger:hilt-android-compiler:$daggerHiltVersion"
     // Hilt ViewModel extension
     implementation "androidx.hilt:hilt-lifecycle-viewmodel:$hiltLifeCycleVersion"
-    kapt "androidx.hilt:hilt-compiler:$hiltLifeCycleVersion"
+    annotationProcessor "androidx.hilt:hilt-compiler:$hiltLifeCycleVersion"
 
     //for image rendering
     implementation "io.coil-kt:coil:$coilVersion"
